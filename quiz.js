@@ -1,22 +1,111 @@
-const categoryOne = []
-
-const categoryTwo = []
-
-const categoryThree = [
+const questionAndAnswer = [
     {
         question: "What is the chemical formula for water?",
-        choices: ["c6h12o6", "h2o", "co2", "h2o2"],
-        correctAnswer: "h2o"
+        choices: ["C6H1206", "H20", "CO2", "H2O2"],
+        correctAnswer: "H2O"
     },
     {
         question: "What is the largest human organ?",
-        choices: ["skin", "liver", "heart", "lungs"],
-        correctAnswer: "skin"
+        choices: ["Skin", "Liver", "Heart", "Lungs"],
+        correctAnswer: "Skin"
     },
     
     {
         question: "There are apple pie and cherry pie but this Pi will have you counting...",
-        choices: ["cheese", "swedish", "3.14", "not real"],
+        choices: ["Cheese", "Swedish", "3.14", "not real"],
         correctAnswer: "3.14"
     },
+    {
+        question: "what continent will you not find bees?",
+        choices: ["Europe","Asia","Antarctica","Australia"],
+        correctAnswer: "Antarctica"
+    },
+    {
+        question: "What fruit has the highest concentration of Vitamin C per serving?",
+        choices: ["Orange", "Guava", "Kiwi", "Grapefruit"],
+        correctAnswer: "Guava"
+    },
+    {
+        question: "Which oath of ethics taken by doctors is named after an Ancient Greek physician?",
+        choices: ["The Hippocratic Oath","The Oath of Devotion","The Coronation Oath","Oath Of Honor"],
+        correctAnswer: "The Hippocratic Oath"
+    },
+    {
+        question: "What does DNA stand for?",
+        choices: ["National Dyslexic Association", "Ddala Nze Akuzala", "Dark Native Apostle", "Deoxyribonucleic acid"],
+        correctAnswer: "Deoxyribonucleic acid"
+    },
+    {
+        question: "In what year was Gray’s Anatomy first published?",
+        choices: ["1920", "2000", "1858", "2020"],
+        correctAnswer: "1858"
+    },
+    {
+        question: "The medulla oblongata is found in which part of the body?",
+        choices: ["Brain", "Heart", "Kidney", "Lungs"],
+        correctAnswer: "Brain"
+    },
+    {
+        question: "What was the first effective antibiotic used in medicine?",
+        choices: ["Macrolides", "Clindamycin", "Sulfonamide", "Penicillin"],
+        correctAnswer: "Penicillin"
+    }
 ];
+
+const questionElement = document.getElementById("question");
+const choicesElement = document.getElementById("choices");
+// const submitButton = document.getElementById("submit");
+const resultElement = document.getElementById("result");
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+function displayQuestion() {
+    const currentQuestion = questionAndAnswer[currentQuestionIndex];
+    questionElement.textContent = currentQuestion.question;
+
+    choicesElement.innerHTML = "";
+
+    currentQuestion.choices.forEach((choice, index) => {
+        const choiceButton = document.createElement("button");
+        choiceButton.textContent = choice;
+        choiceButton.addEventListener("click", () => checkAnswer(choice));
+        choicesElement.appendChild(choiceButton);
+    });
+}
+
+// Create function to check the selected answer
+function checkAnswer(selectedAnswer) {
+    const currentQuestion = questionAndAnswer[currentQuestionIndex];
+    if (selectedAnswer === currentQuestion.correctAnswer) {
+        score++; // Increment score if the answer is correct
+        resultElement.textContent = "Correct!";
+    } else {
+        resultElement.textContent = "Incorrect!";
+    }
+    
+    choicesElement.querySelectorAll("button").forEach(button => {
+        button.removeEventListener("click", checkAnswer);
+        button.disabled = true;
+    });
+   // submitButton.disabled = true; // Disable submit button after answering
+    // Move to the next question or end the game
+    setTimeout(() => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questionAndAnswer.length) {
+            displayQuestion();
+        } else {
+            displayResult();
+        }
+    }, 1000);
+}
+
+// Function to display the final result
+function displayResult() {
+    questionElement.textContent = ""; // Clear question area
+    choicesElement.innerHTML = ""; // Clear choices area
+    resultElement.textContent = `You scored ${score} out of ${questionAndAnswer.length}!`;
+}
+
+// Display the first question when the page loads
+displayQuestion();
