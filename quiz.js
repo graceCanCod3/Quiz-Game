@@ -1,7 +1,7 @@
 const questionAndAnswer = [
     {
         question: "What is the chemical formula for water?",
-        choices: ["C6H1206", "H20", "CO2", "H2O2"],
+        choices: ["C6H1206", "H2O", "CO2", "H2O2"],
         correctAnswer: "H2O"
     },
     {
