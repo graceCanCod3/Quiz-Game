@@ -85,10 +85,10 @@ button:hover {
     border-radius: 80%;
 }
 
-/* #submit {
+* #submit {
     margin: 20px auto;
     display: block;
-} */
+} 
 
 #result {
     font-family: "Playfair Display", serif;
