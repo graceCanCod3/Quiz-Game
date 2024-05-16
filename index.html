@@ -11,16 +11,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400..700&display=swap" rel="stylesheet">
 
 
 </head>
 <body>
-    <audio src="music_david_gwyn_jones_the_long_march_instrumental.mp3" controls autoplay loop></audio> <!-- Adjust src attribute to your music file -->
+
+    <audio id="audio" src="music_david_gwyn_jones_the_long_march_instrumental.mp3" controls autoplay loop></audio> <!--Adjust src attribute to your music file -->
+     <div>
+        <button onclick="document.getElementById('audio').muted=!document.getElementById('audio').muted">Mute/Unmute</button>
+    </div>
     <div class="container">
         <h1>Trivia Game</h1>
         <div id="question"></div>
         <div id="choices"></div>
-        <!-- <button id="submit">Submit Answer</button> -->
+        <button id="submit">Submit Answer</button>
         <div id="result"></div>
     </div>
     <script src="quiz.js"></script>

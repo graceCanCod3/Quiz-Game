@@ -88,7 +88,7 @@ function checkAnswer(selectedAnswer) {
         button.removeEventListener("click", checkAnswer);
         button.disabled = true;
     });
-   // submitButton.disabled = true; // Disable submit button after answering
+   submitButton.disabled = true; // Disable submit button after answering
     // Move to the next question or end the game
     setTimeout(() => {
         currentQuestionIndex++;
