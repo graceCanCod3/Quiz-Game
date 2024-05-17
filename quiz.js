@@ -1,3 +1,13 @@
+// Create questionAndAnswer array that stores objects representing a question in the trivia game.
+// question: ""
+// choices: ["","","",""]
+// correctAnswer: ""
+
+// Add variable that keeps track of player score and question being displayed.
+
+// Create variables to store references to HTML elements.
+// `questionElement`, `choicesElement`, `submitButton`, and `resultElement`:
+// add cache element reference `document.getElementById()`
 
 /*--------------------------------------------- Constants -----------------------------------------------*/
 

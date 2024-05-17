@@ -1,12 +1,3 @@
-body::before {
-    content: "Rick and Morty fan art";
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
-    background-image: url("https://www.chromethemer.com/wallpapers/chromebook-wallpapers/images/960/rick-and-morty-fan-art-chromebook-wallpaper.jpg");
-    /
-}
-
 body {
     width: 100%; 
     /* min-width: 600px;  */
@@ -23,6 +14,15 @@ body {
     justify-content: center;
     /* border: 2px solid pink; */
 }
+body::before {
+    content: "Rick and Morty fan art";
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    background-image: url("https://www.chromethemer.com/wallpapers/chromebook-wallpapers/images/960/rick-and-morty-fan-art-chromebook-wallpaper.jpg");
+    /
+}
+
 audio {
     display: none;
     background-color: rgb(179, 75, 75,0);
