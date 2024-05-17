@@ -60,7 +60,7 @@ On javascript, write code to display questions and user input:
    - It disables further clicks on choice buttons and the submit button to prevent multiple submissions.
    - It schedules the display of the next question or the final result after a short delay using `setTimeout()`.
 
-5. ** function**:
+5. **Create display result function**:
    - This function is called when all questions have been answered.
    - It clears the question and choices elements.
    - It displays the player's final score along with the total number of questions.
@@ -71,6 +71,7 @@ On javascript, write code to display questions and user input:
 
 ## Step 4: Style your quiz game
 Create a CSS file (quiz.css) to style your quiz game:
+
 
 ## Step 5: Test your quiz game
 Test your quiz game by opening the HTML file in a web browser. The questions should be displayed one by one. After answering all questions, the final score will be shown.
