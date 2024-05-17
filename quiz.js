@@ -54,7 +54,7 @@ const questionAndAnswer = [
 
 const questionElement = document.getElementById("question");
 const choicesElement = document.getElementById("choices");
-// const submitButton = document.getElementById("submit");
+const submitButton = document.getElementById("submit");
 const resultElement = document.getElementById("result");
 
 let currentQuestionIndex = 0;

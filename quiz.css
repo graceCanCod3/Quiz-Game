@@ -85,9 +85,9 @@ button:hover {
     border-radius: 80%;
 }
 
-* #submit {
+#submit {
     margin: 20px auto;
-    display: block;
+    display: none;
 } 
 
 #result {
