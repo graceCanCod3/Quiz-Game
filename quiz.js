@@ -64,6 +64,8 @@ function displayQuestion() {
     const currentQuestion = questionAndAnswer[currentQuestionIndex];
     questionElement.textContent = currentQuestion.question;
 
+    resultElement.textContent = "";
+
     choicesElement.innerHTML = "";
 
     currentQuestion.choices.forEach((choice, index) => {
