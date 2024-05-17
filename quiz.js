@@ -1,3 +1,6 @@
+
+/*--------------------------------------------- Constants -----------------------------------------------*/
+
 const questionAndAnswer = [
     {
         question: "What is the chemical formula for water?",
@@ -52,13 +55,21 @@ const questionAndAnswer = [
     }
 ];
 
+/*--------------------------------------------------- Variables --------------------------------------------*/
+
+let currentQuestionIndex = 0;
+let score = 0;
+
+/*------------------------------------------- Cached Element References --------------------------------------*/
+
 const questionElement = document.getElementById("question");
 const choicesElement = document.getElementById("choices");
 const submitButton = document.getElementById("submit");
 const resultElement = document.getElementById("result");
 
-let currentQuestionIndex = 0;
-let score = 0;
+
+ /*-------------------------------------- Functions And Event Listeners -------------------------------------*/
+
 
 function displayQuestion() {
     const currentQuestion = questionAndAnswer[currentQuestionIndex];
