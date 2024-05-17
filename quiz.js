@@ -70,6 +70,20 @@ const questionAndAnswer = [
 let currentQuestionIndex = 0;
 let score = 0;
 
+const audio = document.getElementById('audio');
+const muteButton = document.getElementById('muteButton');
+
+muteButton.addEventListener('click', function() {
+    audio.muted = !audio.muted;
+    // Change button text based on muted state
+    if (audio.muted) {
+        muteButton.textContent = "🔊"; // Unmuted state
+    } else {
+        muteButton.textContent = "🔇"; // Muted state
+    }
+});
+
+
 /*------------------------------------------- Cached Element References --------------------------------------*/
 
 const questionElement = document.getElementById("question");
@@ -132,3 +146,4 @@ function displayResult() {
 
 // Display the first question when the page loads
 displayQuestion();
+
